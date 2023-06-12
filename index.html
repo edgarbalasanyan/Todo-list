@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h2>Todo List</h2>
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <input type="datetime-local" id="deadlineInput">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <p>
+        <span class="count-label">Tasks Completed:</span>
+        <span id="completedCount">0</span>
+    </p>
+    <p>
+        <span class="count-label">Tasks Remaining:</span>
+        <span id="remainingCount">0</span>
+    </p>
+    <ul id="taskList">
+        <li>
+            <input type="checkbox" onchange="handleCheckboxChange(this)">
+            Task 1
+            <button class="delete-button" onclick="deleteTask(this.parentNode)">X</button>
+        </li>
+        <li>
+            <input type="checkbox" onchange="handleCheckboxChange(this)">
+            Task 2
+            <button class="delete-button" onclick="deleteTask(this.parentNode)">X</button>
+        </li>
+        <li>
+            <input type="checkbox" onchange="handleCheckboxChange(this)">
+            Task 3
+            <button class="delete-button" onclick="deleteTask(this.parentNode)">X</button>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+.one-day {
+   color: #e06464;
+}
+.one-hour {
+    text-decoration:underline;
+    color: #f81404;
+}
+
+#completedCount,
+#remainingCount {
+font-weight: 600;
+}
+
+p {
+    display:inline-block;
+    margin:30px;
+     
+}
+
+input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+.deadline-label {
+margin-left: 25px;
+font-style: italic;
+}
+
+.delete-button {
+    padding: 3px 8px;
+    margin: 10px;
+    font-size: 14px;
+    background-color: #f81404;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+p {
+    margin-top: 20px;
+}
