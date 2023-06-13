@@ -6,7 +6,7 @@ function addTask() {
     let input = document.getElementById("taskInput");
     let deadlineInput = document.getElementById("deadlineInput");
     let task = input.value;
-    let deadline = new Date(deadlineInput.value);
+    let deadline = deadlineInput.value;
     
     if (task !== "") {
         let taskObj = {
@@ -31,10 +31,10 @@ function addTask() {
 function checkDeadline(task, li) {
     let currentDate = new Date();
     let oneDayInMillis = 24 * 60 * 60 * 1000; // Number of milliseconds in one day
-    if (task.deadline - currentDate <= oneDayInMillis) {
+    if (new Date(task.deadline) - currentDate <= oneDayInMillis) {
         li.classList.add("one-day");
     }
-    if (task.deadline - currentDate <= 60 * 60 * 1000){
+    if (new Date(task.deadline) - currentDate <= 60 * 60 * 1000){
         li.classList.add("one-hour");
         let message = document.createElement("span");
         message.textContent = "Warning: less than one hour left until deadline";
@@ -57,13 +57,12 @@ function createTaskListItem(task) {
     deleteButton.addEventListener("click", function() {
         deleteTask(this.parentNode);
     });
-    let deadlineLabel = document.createElement("span");
-    deadlineLabel.className = "deadline-label";
-    deadlineLabel.textContent = `Deadline: ${task.deadline.toLocaleString()}`;
-    
     li.appendChild(checkbox);
     li.appendChild(document.createTextNode(task.name));
     if(task.deadline){
+        let deadlineLabel = document.createElement("span");
+        deadlineLabel.className = "deadline-label";
+        deadlineLabel.textContent = `Deadline: ${task.deadline.toLocaleString()}`;
         li.appendChild(deadlineLabel);
     }
     li.appendChild(deleteButton);
